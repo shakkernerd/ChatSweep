@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">ChatSweep icon concept 2</title>
+  <desc id="desc">A chat bubble with a checkmark and sweep underline.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff4ef" />
+      <stop offset="100%" stop-color="#f7e4dc" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#111827" flood-opacity="0.16" />
+    </filter>
+  </defs>
+
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bg)" />
+
+  <g filter="url(#shadow)">
+    <path
+      d="M120 144c0-30.928 25.072-56 56-56h160c30.928 0 56 25.072 56 56v108c0 30.928-25.072 56-56 56H238l-61 50c-11.575 9.488-29 1.246-29-13.718V308h-8c-11.046 0-20-8.954-20-20V144z"
+      fill="#172033"
+    />
+    <path
+      d="M200 203l38 39 77-83"
+      fill="none"
+      stroke="#ffffff"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="26"
+    />
+    <path
+      d="M142 354c29 18 63 28 99 28 55 0 106-23 142-60"
+      fill="none"
+      stroke="#ea4335"
+      stroke-linecap="round"
+      stroke-width="30"
+    />
+  </g>
+</svg>
