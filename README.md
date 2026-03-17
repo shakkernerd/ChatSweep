@@ -6,6 +6,8 @@ Selective bulk cleanup for ChatGPT chats.
 
 This is an unofficial project and is not affiliated with or endorsed by OpenAI.
 
+![ChatSweep panel preview](assets/chatsweep-panel.png)
+
 ## Features
 
 - API-backed chat chooser modal
@@ -20,6 +22,10 @@ This is an unofficial project and is not affiliated with or endorsed by OpenAI.
 It loads conversations from ChatGPT's own backend endpoints and sends the same kind of conversation visibility updates that ChatGPT itself uses.
 
 There is no separate sign-in flow, no stored credentials, and no remote backend for this project.
+
+## Screenshots
+
+![ChatSweep popup preview](assets/chatsweep-popup.png)
 
 ## Install Locally
 
@@ -51,13 +57,13 @@ See [PRIVACY.md](PRIVACY.md) for a dedicated privacy statement.
 ## Project Structure
 
 - `manifest.json`: Chrome extension manifest
+- `assets/`: README screenshots
 - `src/content.js`: API-backed chooser modal and delete flow
 - `src/page-bridge.js`: Page-context bridge for ChatGPT request behavior
 - `src/content.css`: Floating panel and modal styling
 - `src/popup.html`: Popup shell
 - `src/popup.css`: Popup styling
 - `src/popup.js`: Popup enable or disable toggle
-- `docs/manual-test-plan.md`: Manual QA checklist
 
 ## Caveats
 
