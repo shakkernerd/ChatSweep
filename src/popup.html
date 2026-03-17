@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChatSweep</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <section class="hero">
+        <p class="eyebrow">ChatSweep</p>
+        <h1>Bulk delete selected chats</h1>
+        <p class="lede">
+          Open the chooser, pick chats across pages, then delete them in one pass.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <p class="label">ChatGPT UI</p>
+            <p class="hint">Show or hide the floating cleanup panel on ChatGPT.</p>
+          </div>
+          <label class="switch" aria-label="Enable ChatSweep UI">
+            <input id="enabled-toggle" type="checkbox" />
+            <span class="track">
+              <span class="thumb"></span>
+            </span>
+          </label>
+        </div>
+        <p class="status" id="status">Loading...</p>
+      </section>
+
+      <section class="card notes">
+        <p class="label">How it works</p>
+        <ol>
+          <li>Open ChatGPT in the same browser profile.</li>
+          <li>Turn this toggle on to show the helper UI.</li>
+          <li>Open the chooser, select chats, and use Delete selected.</li>
+        </ol>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
