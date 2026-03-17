@@ -13,7 +13,7 @@ This is an unofficial project and is not affiliated with or endorsed by OpenAI.
 - API-backed chat chooser modal
 - Pagination across your chat history
 - Selection that persists across modal pages in the current session
-- Bulk hide or delete workflow triggered from one place
+- Bulk hide workflow triggered from one place
 - Local-only behavior with no external service
 
 ## How It Works
@@ -44,7 +44,7 @@ There is no separate sign-in flow, no stored credentials, and no remote backend 
 3. Use the floating `ChatSweep` panel on ChatGPT
 4. Click `Choose chats`
 5. Select chats across one or more pages
-6. Click `Delete selected`
+6. Click `Hide selected`
 
 ## Privacy
 
@@ -70,6 +70,7 @@ See [PRIVACY.md](PRIVACY.md) for a dedicated privacy statement.
 
 - ChatGPT only for now
 - No search or advanced filtering yet
+- Uses ChatGPT's internal visibility API rather than an official public API
 - Depends on ChatGPT's current internal API shape
 - May need updates if ChatGPT changes request headers, payloads, or endpoint behavior
 
