@@ -59,6 +59,7 @@ See [PRIVACY.md](PRIVACY.md) for a dedicated privacy statement.
 - `manifest.json`: Chrome extension manifest
 - `assets/`: README screenshots
 - `assets/icons/`: Extension icon assets and source artwork
+- `assets/web-store/`: Chrome Web Store screenshots and promo tile
 - `src/content.js`: API-backed chooser modal and delete flow
 - `src/page-bridge.js`: Page-context bridge for ChatGPT request behavior
 - `src/content.css`: Floating panel and modal styling
