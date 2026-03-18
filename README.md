@@ -60,6 +60,7 @@ See [PRIVACY.md](PRIVACY.md) for a dedicated privacy statement.
 - `assets/`: README screenshots
 - `assets/icons/`: Extension icon assets and source artwork
 - `assets/web-store/`: Chrome Web Store screenshots and promo tile
+- `scripts/build-zip.sh`: Versioned Chrome Web Store ZIP builder
 - `src/content.js`: API-backed chooser modal and delete flow
 - `src/page-bridge.js`: Page-context bridge for ChatGPT request behavior
 - `src/content.css`: Floating panel and modal styling
@@ -87,6 +88,14 @@ node --check src/content.js
 node --check src/page-bridge.js
 node --check src/popup.js
 ```
+
+Build a versioned upload ZIP:
+
+```bash
+./scripts/build-zip.sh
+```
+
+This writes a file like `dist/chatsweep-v0.1.0-2026-03-18.zip`, so the artifact is version-first and still date-stamped.
 
 ## Roadmap
 
