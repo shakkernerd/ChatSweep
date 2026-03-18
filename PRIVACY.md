@@ -8,13 +8,13 @@ It is an unofficial browser extension and is not affiliated with or endorsed by 
 
 - Displays a floating cleanup panel on `chatgpt.com`
 - Loads your conversation list from ChatGPT's own backend endpoints
-- Sends hide requests only when you explicitly trigger them
+- Sends delete requests only when you explicitly trigger them
 - Stores a small local preference for whether the UI is enabled
 
 ## Data collection
 
 `ChatSweep` does not collect, store, sell, or transmit your data to any external server controlled by this project.
-To work inside your logged-in ChatGPT session, it temporarily uses ChatGPT page request headers and conversation metadata already available in the active tab, and does not retain them outside the current page session.
+To work inside your logged-in ChatGPT session, it temporarily uses ChatGPT page request headers and conversation metadata already available in the active tab to issue ChatGPT delete requests, and does not retain them outside the current page session.
 
 ## Network access
 

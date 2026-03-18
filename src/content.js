@@ -138,7 +138,7 @@
         <div class="mc-header">
           <div class="mc-title">
             <strong>ChatSweep</strong>
-            <span>Load chats from ChatGPT, then hide them in a batch.</span>
+            <span>Load chats from ChatGPT, then delete them in a batch.</span>
           </div>
           <div class="mc-count" data-role="count">0</div>
         </div>
@@ -146,7 +146,7 @@
           <div class="mc-actions">
             <button class="mc-button mc-button-secondary" data-role="choose" type="button">Choose chats</button>
             <button class="mc-button mc-button-secondary" data-role="clear" type="button">Clear</button>
-            <button class="mc-button mc-button-danger mc-button-wide" data-role="delete" type="button">Hide selected</button>
+            <button class="mc-button mc-button-danger mc-button-wide" data-role="delete" type="button">Delete selected</button>
           </div>
           <div class="mc-status" data-role="status">Open the chooser to load chats from the ChatGPT API.</div>
           <div class="mc-progress">
@@ -461,7 +461,7 @@
     }
 
     const confirmed = window.confirm(
-      `Hide ${selectedChats.size} selected chat${selectedChats.size === 1 ? "" : "s"} from your ChatGPT history list? This tool uses ChatGPT's visibility API and cannot undo the action for you.`
+      `Delete ${selectedChats.size} selected chat${selectedChats.size === 1 ? "" : "s"}? This uses ChatGPT's existing conversation visibility request and cannot be undone from this tool.`
     );
     if (!confirmed) {
       return;
@@ -480,7 +480,7 @@
       const chat = selectedChats.get(id);
 
       try {
-        setStatus(`Hiding ${state.processed + 1} of ${state.total}...`);
+        setStatus(`Deleting ${state.processed + 1} of ${state.total}...`);
         updateProgress(state.processed, state.total);
         await patchConversationVisibility(id, false);
         selectedChats.delete(id);
@@ -509,11 +509,11 @@
 
     if (failures.length) {
       setStatus(
-        `Hid ${ids.length - failures.length} chat${ids.length - failures.length === 1 ? "" : "s"}, with ${failures.length} failure${failures.length === 1 ? "" : "s"}.`
+        `Deleted ${ids.length - failures.length} chat${ids.length - failures.length === 1 ? "" : "s"}, with ${failures.length} failure${failures.length === 1 ? "" : "s"}.`
       );
-      console.warn("[ChatSweep] Failed hide requests:", failures);
+      console.warn("[ChatSweep] Failed delete requests:", failures);
     } else {
-      setStatus(`Hid ${ids.length} chat${ids.length === 1 ? "" : "s"}.`);
+      setStatus(`Deleted ${ids.length} chat${ids.length === 1 ? "" : "s"}.`);
     }
 
     renderPanel();
@@ -529,7 +529,7 @@
       }
     }).then((data) => {
     if (!data || data.success !== true) {
-      throw new Error("ChatGPT did not confirm the hide request.");
+      throw new Error("ChatGPT did not confirm the delete request.");
     }
     });
   }
@@ -624,7 +624,7 @@
 
     if (deleteButton) {
       deleteButton.disabled = state.busy || selectedChats.size === 0;
-      deleteButton.textContent = state.busy ? "Hiding..." : "Hide selected";
+      deleteButton.textContent = state.busy ? "Deleting..." : "Delete selected";
     }
 
     if (chooseButton) {
